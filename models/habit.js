@@ -2,13 +2,13 @@
 const mongoose = require('mongoose');
 
 const habitSchema = new mongoose.Schema({
-     
+      
       habitData:{
          type:String,
          require:true
       },
       time:{
-           type:Time,
+           type:String,
            require:true
       },
       totalDays:{
@@ -21,6 +21,6 @@ const habitSchema = new mongoose.Schema({
       timestamps:true,
 });
 
-const Habit = mongoose.model('Habit',habitSchema);
 
+const Habit = mongoose.model('Habit',habitSchema);
 module.exports = Habit;

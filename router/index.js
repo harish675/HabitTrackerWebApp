@@ -5,6 +5,7 @@ const homeController = require('../controllers/home_controllers');
 
 
 router.get('/',homeController.homePage);
+router.use('/habit',require('./habit'));
 
 
 
