@@ -16,6 +16,18 @@ module.exports.createForDone = async function (req,res){
            const formattedDate = currentDate.toDateString();
            const parts = formattedDate.split(' ');
            const newDate = parts.slice(1).join(' ');
+            
+            //if exiting date present 
+           const existingTask = await DailyTask.findOne({
+            date: newDate,
+            habit: req.query.id,
+           });
+      
+          if (existingTask) {
+            console.log('Task already exists for today');
+            return res.redirect('back');
+          }
+      
            
           //created daily task for the storing daily track of habit
           let task = await DailyTask.create({
@@ -48,6 +60,17 @@ module.exports.createForNotDone = async function (req,res){
            const formattedDate = currentDate.toDateString();
            const parts = formattedDate.split(' ');
            const newDate = parts.slice(1).join(' ');
+
+           const existingTask = await DailyTask.findOne({
+            date: newDate,
+            habit: req.query.id,
+          });
+      
+          if (existingTask) {
+            console.log('Task already exists for today');
+            return res.redirect('back');
+          }
+      
            
           //created daily task for the storing daily track of habit
           let task = await DailyTask.create({
@@ -80,6 +103,16 @@ module.exports.createForSkip = async function (req,res){
              const formattedDate = currentDate.toDateString();
              const parts = formattedDate.split(' ');
              const newDate = parts.slice(1).join(' ');
+
+             const existingTask = await DailyTask.findOne({
+              date: newDate,
+              habit: req.query.id,
+            });
+        
+            if (existingTask) {
+              console.log('Task already exists for today');
+              return res.redirect('back');
+            }
              
             //created daily task for the storing daily track of habit
             let task = await DailyTask.create({

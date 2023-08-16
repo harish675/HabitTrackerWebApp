@@ -9,9 +9,12 @@ const Habit = require('../models/habit');
          try{
 
             let habits = await Habit.find({})
-            .sort('-createdAt')
+            .sort('-createdAt:-1')
             .populate({
                 path:'dailyTask',
+                options: {
+                        sort: { createdAt: -1 } // Sort daily tasks by createdAt in descending order
+                    },
             });
 
             if(!habits){

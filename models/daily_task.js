@@ -13,10 +13,7 @@ const dailyTaskSchema = new mongoose.Schema({
         },
         completed:{
               type:Boolean,
-        }
-        
-            
-        
+        },     
       
 },{
      timestamps:true,

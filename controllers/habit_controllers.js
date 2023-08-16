@@ -1,5 +1,5 @@
 const Habit = require('../models/habit');
-
+const DailyTask = require('../models/daily_task');
 
 //create habit
 module.exports.create = async function(req ,res){
@@ -31,7 +31,10 @@ module.exports.destroy = function(req,res){
       .then(function(deleteHabit){
               if(deleteHabit){
                   console.log("Habit deleted successfully");
+                    DailyTask.deleteMany({habit:id});
                   return res.redirect('back');
+
+
               }
               else{
                   console.log('Habit Not found for deleting');
