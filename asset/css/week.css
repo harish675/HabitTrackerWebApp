@@ -1,0 +1,76 @@
+ #habit-details-container{
+     width: 80%;
+     height: 98%;
+     margin: 10%;
+     margin-top:0%;
+     padding-top:2%;
+     /* border: 2px solid red;      */
+ }
+ .habit-name{
+     
+      font-size: 30px;
+      font-weight: 700;
+      color:white;
+ }
+ 
+ #habit-details-container ul li{
+     
+      list-style: none;
+ }
+
+ ul{ 
+    margin-left: 0px;
+     display: flex;
+     justify-content: space-between;
+ }
+ 
+ #task-details{ 
+      height: 25%;
+      width:  80%;
+ }
+ #task-details li{
+     
+      height: 130px;
+      width: 130px;
+      background-color:white;
+      color: white;
+      display: block;
+      border-radius: 5px;
+      border-bottom-right-radius:30px;
+          
+ }
+ .info{
+      height: 30%;
+      width: 100%;
+      background-color:red;
+ }
+
+ .info p{
+      margin-left: 10px;
+      padding-top: 12px;
+      font-size: 20px;
+      font-weight: 700;
+ }
+ 
+ #action-btns{
+       
+      height: 60%;
+      width: 100%;
+      margin-top: 15px;
+      
+ }
+
+ #action-btns a {
+      
+      color: gray;
+      font-size: 35px;
+      margin-left: 6px;
+      text-decoration: none;
+     
+     
+ }
+
+ .done-btn[data-value="true"] {
+     color: green;
+ }
+ 

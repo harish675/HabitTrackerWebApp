@@ -1,0 +1,43 @@
+
+<link rel="stylesheet" href="/css/week.css">
+<div id="week-details-container">
+
+        <div id="habit-details-container">
+            <% for (const habit of habits) { %>
+                <p class="habit-name"><%= habit.name %></p>
+                
+                <ul>
+                    <% for (let i = 0; i < habit.dailyTask.length && i < 7; i++) { %>               
+                          <div id="task-details">
+
+                                <li>
+                                    <div class="info" data-value="<%=habit.dailyTask[i].completed%>">
+                                        <p><%= habit.dailyTask[i].date %></p> 
+                                    </div>
+                                    <div id="action-btns">
+                                        <a href="/daily_task/mark-as-complete/?id=<%=habit.dailyTask[i].id%>" class="done-btn" data-value="<%=habit.dailyTask[i].completed%>">
+                                            <i class="fa-solid fa-check"></i>
+                                        </a>
+                                        <a href="/daily_task/mark-as-not-complete/?id=<%=habit.dailyTask[i].id%>" class="not-done-btn" data-value="<%=habit.dailyTask[i].completed%>" > 
+                                        <i class="fa-solid fa-times"></i>
+                                        </a>
+                                        <a href="/daily_task/skip/?id=<%=habit.dailyTask[i].id%>" class="skip-btn" data-value="<%=habit.dailyTask[i].completed%>" > 
+                                            <i class="fa-solid  fa-minus"></i>
+                                        </a>
+                                    </div>
+                                </li> 
+                              
+                                
+                          </div>      
+
+                    <% } %>
+                </ul>
+            <% } %>
+        
+        </div>
+
+        
+
+</div>
+
+<script src="/js/week.js" ></script>

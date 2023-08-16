@@ -1,26 +1,31 @@
 
 const mongoose = require('mongoose');
 
-const habitSchema = new mongoose.Schema({
-      
-      habitData:{
-         type:String,
-         require:true
-      },
-      time:{
-           type:String,
-           require:true
-      },
-      totalDays:{
-          type:Number,
-      },
-      completedDays:{
-           type:Number,
-      }
+const  habitSchema = new mongoose.Schema({
+     
+       name:{
+          type:String,
+          require:true
+       },
+       completed:{
+           type:Boolean,
+       },
+       dateCreated:{
+          type:String,
+       },
+
+       dailyTask:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"DailyTask",
+        }
+       ]
+
 },{
-      timestamps:true,
+      
+     timestamp:true,
+     
 });
-
-
 const Habit = mongoose.model('Habit',habitSchema);
+
 module.exports = Habit;
