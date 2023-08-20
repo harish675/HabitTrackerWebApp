@@ -3,7 +3,7 @@ const DailyTask = require('../models/daily_task');
 
 //create habit
 module.exports.create = async function(req ,res){
-      console.log(req.body);
+      
 
       try{
             let habit = await Habit.create({   

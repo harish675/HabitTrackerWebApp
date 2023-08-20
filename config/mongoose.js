@@ -1,8 +1,8 @@
-
+ 
+ 
 const  mongoose = require('mongoose');
 
-
-mongoose.connect('mongodb://127.0.0.1/habitTracker_development');
+mongoose.connect('mongodb+srv://habit:habit@cluster0.ikrv633.mongodb.net/habit');
 
 const db =  mongoose.connection;
 
